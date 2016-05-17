@@ -23,7 +23,7 @@ MSG "Configuring Prosody..."
 
 sed -i -e "s/{{ADMINS}}/${ADMINS}/" \
 	-e "s/{{XMPP_DOMAIN}}/${XMPP_DOMAIN}/" \
-	-e "s/{{DB_HOST}}/${DB_HOST}/" \ 
+	-e "s/{{DB_HOST}}/${DB_HOST}/" \
 	-e "s/{{DB_PORT}}/${DB_PORT}/" \
 	-e "s/{{DB_NAME}}/${DB_NAME}/" \
 	-e "s/{{DB_USER}}/${DB_USER}/" \
@@ -32,7 +32,7 @@ sed -i -e "s/{{ADMINS}}/${ADMINS}/" \
 
 sed -i -e "s/{{LDAP_HOST}}/${LDAP_HOST}/" \
 	-e "s/{{LDAP_DN}}/${LDAP_DN}/" \
-	-e "s/{{LDAP_PASS}}/${LDAP_PASS}/" \ 
+	-e "s/{{LDAP_PASS}}/${LDAP_PASS}/" \
 	-e "s/{{LDAP_GROUP}}/${LDAP_GROUP}/" \
 	-e "s/{{LDAP_USER_BASE}}/${LDAP_USER_BASE}/" \
 	-e "s/{{LDAP_GROUP_BASE}}/${LDAP_GROUP_BASE}/" \
