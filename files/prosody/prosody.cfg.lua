@@ -61,7 +61,7 @@ modules_enabled = {
 		"time"; -- Let others know the time here on this server
 		"ping"; -- Replies to XMPP pings with pongs
 		"pep"; -- Enables users to publish their mood, activity, playing music and more
-		"register"; -- Allow users to register on this server using a client and change passwords
+		--"register"; -- Allow users to register on this server using a client and change passwords
 
 	-- Admin interfaces
 		"admin_adhoc"; -- Allows administration via an XMPP client that supports ad-hoc commands
@@ -72,6 +72,7 @@ modules_enabled = {
 		--"http_files"; -- Serve static files from a directory over HTTP
 
 	-- Other specific functionality
+		"posix"; -- POSIX functionality, sends server to background, enables syslog, etc.
 		"groups"; -- Shared roster support
 		"announce"; -- Send announcement to all online users
 		--"welcome"; -- Welcome users who register accounts
