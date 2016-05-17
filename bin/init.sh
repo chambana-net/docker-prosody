@@ -63,4 +63,4 @@ done
 
 MSG "Starting Prosody..."
 
-su - prosody -c prosodyctl start
+su - prosody -c /usr/bin/prosody
