@@ -53,6 +53,8 @@ echo "    muc_log_by_default = true;" >> /etc/prosody/conf.d/domain.cfg.lua
 echo "    muc_log_all_rooms = true;" >> /etc/prosody/conf.d/domain.cfg.lua
 
 chmod 755 /etc/prosody/conf.d/domain.cfg.lua
+mkdir -p /var/run/prosody
+chown -R prosody:prosody /var/lib/prosody /var/log/prosody /var/run/prosody
 
 MSG "Waiting for certs..."
 while [[ ! -e /etc/letsencrypt/fullchain.pem ]]; do
