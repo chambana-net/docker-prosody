@@ -54,6 +54,11 @@ echo "    muc_log_all_rooms = true;" >> /etc/prosody/conf.d/domain.cfg.lua
 
 chmod 755 /etc/prosody/conf.d/domain.cfg.lua
 
+MSG "Waiting for certs..."
+while [[ ! -e /etc/letsencrypt/fullchain.pem ]]; do
+	sleep 5
+done
+
 MSG "Starting Prosody..."
 
-prosodyctl start
+su - prosody -c prosodyctl start
