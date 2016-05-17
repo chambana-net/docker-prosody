@@ -28,6 +28,8 @@ use_libevent = true;
 
 plugins_path = { "/usr/lib/prosody/modules", "/opt/prosody-modules" }
 
+prosody_user = "prosody"
+
 -- This is the list of modules Prosody will load on startup.
 -- It looks for mod_modulename.lua in the plugins folder, so make sure that exists too.
 -- Documentation on modules can be found at: http://prosody.im/doc/modules
