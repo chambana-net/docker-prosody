@@ -6,6 +6,7 @@ RUN apt-get -qq update && \
     apt-get install -y --no-install-recommends prosody \
                                                prosody-modules \
                                                lua-zlib \
+                                               lua-sec \
                                                lua-dbi-postgresql \
                                                ca-certificates && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
