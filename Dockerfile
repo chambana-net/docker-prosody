@@ -21,9 +21,8 @@ RUN apt-get -qq update && \
                                                libssl-dev \
                                                mercurial \
                                                bsdmainutils \
-                                               make \
+                                               wget \
                                                openssl \
-                                               build-essential \
                                                ca-certificates && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
