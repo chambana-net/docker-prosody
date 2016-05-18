@@ -39,6 +39,9 @@ RUN cd prosody-trunk && make && make install
 
 RUN cp -rf prosody-modules/* /usr/lib/prosody/modules/
 
+# Workaround for library path issues
+RUN cp prosody-modules/mod_lib_ldap/ldap.lib.lua /usr/lib/prosody/modules/
+
 RUN mkdir -p /etc/prosody/conf.d /var/log/prosody /var/run/prosody
 
 ADD files/prosody/prosody.cfg.lua /etc/prosody/prosody.cfg.lua

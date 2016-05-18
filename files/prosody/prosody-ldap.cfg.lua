@@ -4,8 +4,8 @@ authentication = 'ldap2' -- Indicate that we want to use LDAP for authentication
 storage = {
         roster = "ldap";
         vcard = "ldap";
-        archive2 = "sql2";
-        muc_log = "sql2";
+        archive2 = "sql";
+        muc_log = "sql";
 }
 
 ldap = {
