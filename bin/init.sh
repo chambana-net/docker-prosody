@@ -51,7 +51,7 @@ echo "    max_archive_query_results = 50;" >> /etc/prosody/conf.d/domain.cfg.lua
 echo "    muc_log_by_default = true;" >> /etc/prosody/conf.d/domain.cfg.lua
 echo "    muc_log_all_rooms = true;" >> /etc/prosody/conf.d/domain.cfg.lua
 
-chown prosody:prosody /et/prosody/conf.d/domain.cfg.lua
+chown prosody:prosody /etc/prosody/conf.d/domain.cfg.lua
 chmod 755 /etc/prosody/conf.d/domain.cfg.lua
 
 MSG "Waiting for certs..."

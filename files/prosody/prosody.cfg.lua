@@ -53,7 +53,7 @@ modules_enabled = {
 	
 	-- These are commented by default as they have a performance impact
 		--"privacy"; -- Support privacy lists
-		"compression"; -- Stream compression (Debian: requires lua-zlib module to work)
+		--"compression"; -- Stream compression (Debian: requires lua-zlib module to work)
 
 	-- Nice to have
 		"version"; -- Replies to server version requests

@@ -30,10 +30,13 @@ RUN groupadd prosody
 RUN useradd -g prosody prosody
 
 RUN hg clone http://hg.prosody.im/trunk prosody-trunk
+RUN hg clone https://hg.prosody.im/prosody-modules/ prosody-modules
 
 RUN cd prosody-trunk && ./configure --ostype=debian --prefix=/usr --sysconfdir=/etc/prosody --datadir=/var/lib/prosody --require-config
 
 RUN cd prosody-trunk && make && make install
+
+RUN cp -rf prosody-modules/* /usr/lib/prosody/modules/
 
 RUN mkdir -p /etc/prosody/conf.d /var/log/prosody /var/run/prosody
 
