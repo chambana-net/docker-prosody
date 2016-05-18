@@ -86,6 +86,7 @@ modules_enabled = {
 		"mam";
 		"offline";
 		"cloud_notify";
+		"roster_allinall";
 };
 
 -- These modules are auto-loaded, but should you want
@@ -205,7 +206,6 @@ log = {
 
 -- Set up a SOCKS5 bytestream proxy for server-proxied file transfers:
 --Component "proxy.example.com" "proxy65"
-Component "proxy.{{XMPP_DOMAIN}}" "proxy65"
 
 ---Set up an external component (default component port is 5347)
 --

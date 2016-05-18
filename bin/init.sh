@@ -22,7 +22,6 @@ LDAP_GROUP=${LDAP_GROUP:-"xmpp"}
 MSG "Configuring Prosody..."
 
 sed -i -e "s/{{ADMINS}}/${ADMINS}/" \
-	-e "s/{{XMPP_DOMAIN}}/${XMPP_DOMAIN}/" \
 	-e "s/{{DB_HOST}}/${DB_HOST}/" \
 	-e "s/{{DB_PORT}}/${DB_PORT}/" \
 	-e "s/{{DB_NAME}}/${DB_NAME}/" \
@@ -38,7 +37,7 @@ sed -i -e "s/{{LDAP_HOST}}/${LDAP_HOST}/" \
 	-e "s/{{LDAP_GROUP_BASE}}/${LDAP_GROUP_BASE}/" \
 	/etc/prosody/prosody-ldap.cfg.lua
   
-echo VirtualHost \"${XMPP_DOMAIN}\" >> /etc/prosody/conf.d/domain.cfg.lua
+echo VirtualHost \"${XMPP_DOMAIN}\" > /etc/prosody/conf.d/domain.cfg.lua
 echo "	ssl = {" >> /etc/prosody/conf.d/domain.cfg.lua
 echo "		key = \"/etc/letsencrypt/key.pem\";" >> /etc/prosody/conf.d/domain.cfg.lua
 echo "		certificate = \"/etc/letsencrypt/fullchain.pem\";" >> /etc/prosody/conf.d/domain.cfg.lua
@@ -50,6 +49,7 @@ echo "    max_history_messages = 50;" >> /etc/prosody/conf.d/domain.cfg.lua
 echo "    max_archive_query_results = 50;" >> /etc/prosody/conf.d/domain.cfg.lua
 echo "    muc_log_by_default = true;" >> /etc/prosody/conf.d/domain.cfg.lua
 echo "    muc_log_all_rooms = true;" >> /etc/prosody/conf.d/domain.cfg.lua
+echo Component \"proxy.${XMPP_DOMAIN}\" \"proxy65\" >> /etc/prosody/conf.d/domain.cfg.lua
 
 chown prosody:prosody /etc/prosody/conf.d/domain.cfg.lua
 chmod 755 /etc/prosody/conf.d/domain.cfg.lua
