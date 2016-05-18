@@ -15,6 +15,7 @@ RUN apt-get -qq update && \
                                                lua-socket \
                                                lua-filesystem \
                                                lua-zlib \
+                                               lua-ldap \
                                                lua-event \
                                                libidn11-dev \
                                                libssl-dev \
