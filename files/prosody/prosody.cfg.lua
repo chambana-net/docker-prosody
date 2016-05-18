@@ -26,9 +26,14 @@ admins = { {{ADMINS}} }
 -- For more information see: http://prosody.im/doc/libevent
 use_libevent = true;
 
-plugins_path = { "/usr/lib/prosody/modules", "/opt/prosody-modules" }
+cross_domain_bosh = "*";
+cross_domain_websocket = true;
+consider_websocket_secure = true;
 
-prosody_user = "prosody"
+smacks_hibernation_time = 300;
+
+default_archive_policy = true; -- other options are false or "roster";
+max_archive_query_results = 500;
 
 -- This is the list of modules Prosody will load on startup.
 -- It looks for mod_modulename.lua in the plugins folder, so make sure that exists too.
@@ -144,21 +149,21 @@ s2s_insecure_domains = { "gmail.com" }
 -- server please see http://prosody.im/doc/modules/mod_auth_internal_hashed
 -- for information about using the hashed backend.
 
-authentication = "ldap"
+Include '/etc/prosody/prosody-ldap.cfg.lua'
 
 -- Select the storage backend to use. By default Prosody uses flat files
 -- in its configured data directory, but it also supports more backends
 -- through modules. An "sql" backend is included by default, but requires
 -- additional dependencies. See http://prosody.im/doc/storage for more info.
 
-storage = "sql" -- Default is "internal" (Debian: "sql" requires one of the
+storage = "sql2" -- Default is "internal" (Debian: "sql" requires one of the
 -- lua-dbi-sqlite3, lua-dbi-mysql or lua-dbi-postgresql packages to work)
 
 -- For the "sql" backend, you can uncomment *one* of the below to configure:
 --sql = { driver = "SQLite3", database = "prosody.sqlite" } -- Default. 'database' is the filename.
 --sql = { driver = "MySQL", database = "prosody", username = "prosody", password = "secret", host = "localhost" }
 --sql = { driver = "PostgreSQL", database = "prosody", username = "prosody", password = "secret", host = "localhost" }
-sql = { driver = "PostgreSQL", database = "{{DB_NAME}}", username = "{{DB_USER}}", password = "{{DB_PWD}}", host = "{{DB_HOST}}" }
+sql = { driver = "PostgreSQL", database = "{{DB_NAME}}", username = "{{DB_USER}}", password = "{{DB_PASS}}", host = "{{DB_HOST}}" }
 
 -- Logging configuration
 -- For advanced logging see http://prosody.im/doc/logging

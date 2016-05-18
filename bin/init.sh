@@ -36,9 +36,8 @@ sed -i -e "s/{{LDAP_HOST}}/${LDAP_HOST}/" \
 	-e "s/{{LDAP_GROUP}}/${LDAP_GROUP}/" \
 	-e "s/{{LDAP_USER_BASE}}/${LDAP_USER_BASE}/" \
 	-e "s/{{LDAP_GROUP_BASE}}/${LDAP_GROUP_BASE}/" \
-	/etc/prosody/prosody.cfg.lua
+	/etc/prosody/prosody-ldap.cfg.lua
   
-
 echo VirtualHost \"${XMPP_DOMAIN}\" >> /etc/prosody/conf.d/domain.cfg.lua
 echo "	ssl = {" >> /etc/prosody/conf.d/domain.cfg.lua
 echo "		key = \"/etc/letsencrypt/key.pem\";" >> /etc/prosody/conf.d/domain.cfg.lua
@@ -52,9 +51,8 @@ echo "    max_archive_query_results = 50;" >> /etc/prosody/conf.d/domain.cfg.lua
 echo "    muc_log_by_default = true;" >> /etc/prosody/conf.d/domain.cfg.lua
 echo "    muc_log_all_rooms = true;" >> /etc/prosody/conf.d/domain.cfg.lua
 
+chown prosody:prosody /et/prosody/conf.d/domain.cfg.lua
 chmod 755 /etc/prosody/conf.d/domain.cfg.lua
-mkdir -p /var/run/prosody
-chown -R prosody:prosody /var/lib/prosody /var/log/prosody /var/run/prosody
 
 MSG "Waiting for certs..."
 while [[ ! -e /etc/letsencrypt/fullchain.pem ]]; do

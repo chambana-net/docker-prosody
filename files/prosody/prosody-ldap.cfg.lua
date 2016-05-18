@@ -4,14 +4,14 @@ authentication = 'ldap2' -- Indicate that we want to use LDAP for authentication
 storage = {
         roster = "ldap";
         vcard = "ldap";
-        archive2 = "sql";
-        muc_log = "sql";
+        archive2 = "sql2";
+        muc_log = "sql2";
 }
 
 ldap = {
     hostname      = '{{LDAP_HOST}}',          -- LDAP server location
     bind_dn       = '{{LDAP_DN}}',            -- Bind DN for LDAP authentication (optional if anonymous bind is supported)
-    bind_password = '{{LDAP_PWD}}',           -- Bind password (optional if anonymous bind is supported)
+    bind_password = '{{LDAP_PASS}}',           -- Bind password (optional if anonymous bind is supported)
 
     user = {
       basedn        = '{{LDAP_USER_BASE}}',                      -- The base DN where user records can be found
