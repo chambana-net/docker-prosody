@@ -31,8 +31,8 @@ ldap = {
         admin = false,              -- (Optional) A boolean flag that indicates whether members of this group should be considered administrators.
       },
       {
-        name  = 'admins',
-        cn    = 'admins',
+        name  = 'xmpp_admins',
+        cn    = 'xmpp_admins',
         admin = true,
       },
     },
@@ -49,20 +49,25 @@ ldap = {
         binval = 'jpegPhoto',
       },
       telephone = {
-       work = {
+       home = {
+			   voice = true,
          number = 'telephoneNumber',
+        },
+       mobile = {
+			   voice = true,
+         number = 'mobile',
         }
       },
       address = {
-       work = {
+       home = {
          street = 'street', -- street name
          pcode = 'postalCode', -- postal code
          locality = 'l', -- city name
-         ctry = 'c', -- country name
+         region = 'st', -- state name
         }
       },
       email = {
-       internet = {
+       home = {
          userid = 'mail',
         }
      },
