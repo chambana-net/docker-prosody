@@ -1,6 +1,6 @@
 docker-prosody
 ==============
-A docker container for the Prosody XMPP server.
+A docker container for the Prosody XMPP server. This container's configuration is inspired by the https://github.com/digicoop/kaiwa-server container.
 
 Usage
 -----
