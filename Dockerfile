@@ -2,6 +2,9 @@ FROM chambana/base:latest
 
 MAINTAINER Josh King <jking@chambana.net>
 
+ENV DB_HOST="postgres" DB_PORT="5432" DB_USER="prosody" \
+  DB_NAME="prosody" LDAP_HOST="ldap" LDAP_GROUP="xmpp"
+
 RUN apt-get -qq update && \
     apt-get install -y --no-install-recommends postgresql-client \
                                                lua5.1 \
