@@ -62,5 +62,6 @@ while [[ ! -e /etc/letsencrypt/fullchain.pem ]]; do
 done
 
 MSG "Starting Prosody..."
+while true; do sleep 1; done
 
 su - prosody -c /usr/bin/prosody

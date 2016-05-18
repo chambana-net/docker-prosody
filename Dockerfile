@@ -22,5 +22,4 @@ EXPOSE 5000 5222 5269 5347 5280 5281
 ADD bin/init.sh /app/bin/init.sh
 RUN chmod 0755 /app/bin/init.sh
 
-#CMD ["/app/bin/init.sh"]
-ENTRYPOINT ["/bin/bash"]
+CMD ["/app/bin/init.sh"]
