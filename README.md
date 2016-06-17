@@ -26,18 +26,18 @@ A sample `docker-compose` stanza demonstrating some of the available environment
     volumes:
       - /etc/letsencrypt/live/example.com:/etc/letsencrypt:ro
     environment:
-      - XMPP_DOMAIN=example.com
-      - DB_HOST=postgres
-      - DB_PORT=5432
-      - DB_NAME=prosody
-      - DB_USER=prosody
-      - DB_PASS=examplepassword1
-      - LDAP_HOST=ldap
-      - LDAP_USER_BASE=cn=users,cn=accounts,dc=example,dc=com
-      - LDAP_GROUP_BASE=cn=groups,cn=accounts,dc=example,dc=com
-      - LDAP_DN=uid=prosody,cn=sysaccounts,cn=etc,dc=example,dc=com
-      - LDAP_PASS=examplepassword2
-      - LDAP_GROUP=xmpp
+      - PROSODY_XMPP_DOMAIN=example.com
+      - PROSODY_DB_HOST=postgres
+      - PROSODY_DB_PORT=5432
+      - PROSODY_DB_NAME=prosody
+      - PROSODY_DB_USER=prosody
+      - PROSODY_DB_PASS=examplepassword1
+      - PROSODY_LDAP_HOST=ldap
+      - PROSODY_LDAP_USER_BASE=cn=users,cn=accounts,dc=example,dc=com
+      - PROSODY_LDAP_GROUP_BASE=cn=groups,cn=accounts,dc=example,dc=com
+      - PROSODY_LDAP_DN=uid=prosody,cn=sysaccounts,cn=etc,dc=example,dc=com
+      - PROSODY_LDAP_PASS=examplepassword2
+      - PROSODY_LDAP_GROUP=xmpp
     links:
       - postgres:postgres
       - ldap:ldap

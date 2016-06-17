@@ -2,8 +2,9 @@ FROM chambana/base:latest
 
 MAINTAINER Josh King <jking@chambana.net>
 
-ENV DB_HOST="postgres" DB_PORT="5432" DB_USER="prosody" \
-  DB_NAME="prosody" LDAP_HOST="ldap" LDAP_GROUP="xmpp"
+ENV PROSODY_DB_HOST="postgres" PROSODY_DB_PORT="5432" PROSODY_DB_USER="prosody" \
+    PROSODY_DB_NAME="prosody" PROSODY_LDAP_HOST="ldap" PROSODY_LDAP_GROUP="xmpp" \
+    PROSODY_ADMINS=""
 
 RUN apt-get -qq update && \
     apt-get install -y --no-install-recommends postgresql-client \
