@@ -66,7 +66,8 @@ RUN chown -R prosody:prosody /etc/prosody /var/lib/prosody /var/log/prosody /var
 EXPOSE 5000 5222 5269 5347 5280 5281
 
 ## Add startup script.
-ADD bin/init.sh /app/bin/init.sh
-RUN chmod 0755 /app/bin/init.sh
+ADD bin/run.sh /app/bin/run.sh
+RUN chmod 0755 /app/bin/run.sh
 
-CMD ["/app/bin/init.sh"]
+ENTRYPOINT ["/app/bin/run.sh"]
+CMD ["su", "-", "prosody", "-c", "/usr/bin/prosody"]
