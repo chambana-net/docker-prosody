@@ -60,4 +60,4 @@ done
 
 MSG "Starting Prosody..."
 
-su - prosody -c /usr/bin/prosody
+exec "$@"
