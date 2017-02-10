@@ -2,8 +2,8 @@
 authentication = 'ldap2' -- Indicate that we want to use LDAP for authentication
 --storage        = 'ldap' -- Indicate that we want to use LDAP for roster/vcard storage
 storage = {
-        roster = "ldap";
-        vcard = "ldap";
+        roster = "sql";
+        vcard = "sql";
         archive2 = "sql";
         muc_log = "sql";
 }
