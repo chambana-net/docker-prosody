@@ -52,8 +52,8 @@ modules_enabled = {
 		"vcard"; -- Allow users to set vCards
 	
 	-- These are commented by default as they have a performance impact
-		--"privacy"; -- Support privacy lists
-		--"compression"; -- Stream compression (Debian: requires lua-zlib module to work)
+		"privacy"; -- Support privacy lists
+		"compression"; -- Stream compression (Debian: requires lua-zlib module to work)
 
 	-- Nice to have
 		"version"; -- Replies to server version requests
@@ -77,7 +77,7 @@ modules_enabled = {
 		"announce"; -- Send announcement to all online users
 		--"welcome"; -- Welcome users who register accounts
 		--"watchregistrations"; -- Alert admins of registrations
-		--"motd"; -- Send a message to users when they log in
+		"motd"; -- Send a message to users when they log in
 		--"legacyauth"; -- Legacy authentication. Only used by some old clients and bots.
 		"websocket";
 		"carbons";
@@ -87,6 +87,8 @@ modules_enabled = {
 		"offline";
 		"cloud_notify";
 		"roster_allinall";
+		"strict_https";
+		"blocklist";
 };
 
 -- These modules are auto-loaded, but should you want
