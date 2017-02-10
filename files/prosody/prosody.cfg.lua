@@ -119,6 +119,7 @@ pidfile = "/var/run/prosody/prosody.pid";
 ssl = {
 	key = "/etc/letsencrypt/key.pem";
 	certificate = "/etc/letsencrypt/fullchain.pem";
+	protocol = "tlsv1_1+";
 }
 
 -- Force clients to use encrypted connections? This option will

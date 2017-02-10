@@ -40,6 +40,7 @@ echo VirtualHost \"${PROSODY_XMPP_DOMAIN}\" > /etc/prosody/conf.d/domain.cfg.lua
 echo "	ssl = {" >> /etc/prosody/conf.d/domain.cfg.lua
 echo "		key = \"/etc/letsencrypt/key.pem\";" >> /etc/prosody/conf.d/domain.cfg.lua
 echo "		certificate = \"/etc/letsencrypt/fullchain.pem\";" >> /etc/prosody/conf.d/domain.cfg.lua
+echo "		protocol = \"tlsv1_1+\";" >> /etc/prosody/conf.d/domain.cfg.lua
 echo "	}" >> /etc/prosody/conf.d/domain.cfg.lua
 echo Component \"chat.${PROSODY_XMPP_DOMAIN}\" \"muc\" >> /etc/prosody/conf.d/domain.cfg.lua
 echo "    name = \"The ${PROSODY_XMPP_DOMAIN} chatrooms server\"" >> /etc/prosody/conf.d/domain.cfg.lua
