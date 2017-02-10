@@ -20,20 +20,20 @@ CHECK_VAR PROSODY_LDAP_GROUP_BASE
 
 MSG "Configuring Prosody..."
 
-sed -i -e "s/{{PROSODY_ADMINS}}/${PROSODY_ADMINS}/" \
-	-e "s/{{PROSODY_DB_HOST}}/${PROSODY_DB_HOST}/" \
-	-e "s/{{PROSODY_DB_PORT}}/${PROSODY_DB_PORT}/" \
-	-e "s/{{PROSODY_DB_NAME}}/${PROSODY_DB_NAME}/" \
-	-e "s/{{PROSODY_DB_USER}}/${PROSODY_DB_USER}/" \
-	-e "s/{{PROSODY_DB_PASS}}/${PROSODY_DB_PASS}/" \
+sed -i -e "s/{{ADMINS}}/${PROSODY_ADMINS}/" \
+	-e "s/{{DB_HOST}}/${PROSODY_DB_HOST}/" \
+	-e "s/{{DB_PORT}}/${PROSODY_DB_PORT}/" \
+	-e "s/{{DB_NAME}}/${PROSODY_DB_NAME}/" \
+	-e "s/{{DB_USER}}/${PROSODY_DB_USER}/" \
+	-e "s/{{DB_PASS}}/${PROSODY_DB_PASS}/" \
 	/etc/prosody/prosody.cfg.lua
 
-sed -i -e "s/{{PROSODY_LDAP_HOST}}/${PROSODY_LDAP_HOST}/" \
-	-e "s/{{PROSODY_LDAP_DN}}/${PROSODY_LDAP_DN}/" \
-	-e "s/{{PROSODY_LDAP_PASS}}/${PROSODY_LDAP_PASS}/" \
-	-e "s/{{PROSODY_LDAP_GROUP}}/${PROSODY_LDAP_GROUP}/" \
-	-e "s/{{PROSODY_LDAP_USER_BASE}}/${PROSODY_LDAP_USER_BASE}/" \
-	-e "s/{{PROSODY_LDAP_GROUP_BASE}}/${PROSODY_LDAP_GROUP_BASE}/" \
+sed -i -e "s/{{LDAP_HOST}}/${PROSODY_LDAP_HOST}/" \
+	-e "s/{{LDAP_DN}}/${PROSODY_LDAP_DN}/" \
+	-e "s/{{LDAP_PASS}}/${PROSODY_LDAP_PASS}/" \
+	-e "s/{{LDAP_GROUP}}/${PROSODY_LDAP_GROUP}/" \
+	-e "s/{{LDAP_USER_BASE}}/${PROSODY_LDAP_USER_BASE}/" \
+	-e "s/{{LDAP_GROUP_BASE}}/${PROSODY_LDAP_GROUP_BASE}/" \
 	/etc/prosody/prosody-ldap.cfg.lua
   
 echo VirtualHost \"${PROSODY_XMPP_DOMAIN}\" > /etc/prosody/conf.d/domain.cfg.lua
