@@ -4,7 +4,7 @@ A docker container for the Prosody XMPP server. This container's configuration i
 
 Usage
 -----
-This container runs Prosody. It is designed to use an LDAP server for roster and vcard storage, and a Postgres server for other storage. It uses a Prosody 0.10 snapshot with a number of newer modules from the prosody-modules repository. It is designed to work in tandem with a proxy providing LetsEncrypt certificates, and expects those certificates to be found in `/etc/letsencrypt`.
+This container runs Prosody. It is designed to use an LDAP server for authentication and a Postgres server for storage. It uses Prosody 0.10.x with a number of newer modules from the prosody-modules repository. It is designed to work in tandem with a proxy providing LetsEncrypt certificates, and expects those certificates to be found in `/etc/letsencrypt`.
 
 A sample `docker-compose` stanza demonstrating some of the available environment variables for configuration is below:
 ```
