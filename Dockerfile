@@ -30,6 +30,7 @@ RUN apt-get -qq update && \
                                                libidn11-dev \
                                                libssl-dev \
                                                mercurial \
+                                               gnupg2 \
                                                bsdmainutils \
                                                prosody && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
