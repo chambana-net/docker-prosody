@@ -9,6 +9,7 @@ ENV PROSODY_DB_HOST="postgres" PROSODY_DB_PORT="5432" PROSODY_DB_USER="prosody" 
 RUN apt-get -qq update && \
     apt-get install -y --no-install-recommends wget \
                                                ca-certificates \
+                                               gnupg2 \
                                                lsb-release && \
     echo deb http://packages.prosody.im/debian $(lsb_release -sc) main > /etc/apt/sources.list.d/prosody.list && \
     wget https://prosody.im/files/prosody-debian-packages.key -O- | apt-key add - && \
@@ -30,7 +31,6 @@ RUN apt-get -qq update && \
                                                libidn11-dev \
                                                libssl-dev \
                                                mercurial \
-                                               gnupg2 \
                                                bsdmainutils \
                                                prosody && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
