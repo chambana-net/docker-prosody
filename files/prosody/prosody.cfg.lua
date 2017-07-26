@@ -175,13 +175,7 @@ sql = { driver = "PostgreSQL", database = "{{DB_NAME}}", username = "{{DB_USER}}
 -- Debian:
 --  Logs info and higher to /var/log
 --  Logs errors to syslog also
-log = {
-	-- Log files (change 'info' to 'debug' for debug logs):
-	debug = "/dev/stdout";
-	error = "/dev/stderr";
-	-- Syslog:
-	--{ levels = { "error" }; to = "syslog";  };
-}
+log = "*console"
 
 ----------- Virtual hosts -----------
 -- You need to add a VirtualHost entry for each domain you wish Prosody to serve.
