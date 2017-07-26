@@ -125,7 +125,7 @@ ssl = {
 -- Force clients to use encrypted connections? This option will
 -- prevent clients from authenticating unless they are using encryption.
 
-c2s_require_encryption = false
+c2s_require_encryption = true
 
 -- Force certificate authentication for server-to-server connections?
 -- This provides ideal security, but requires servers you communicate
@@ -139,7 +139,7 @@ s2s_secure_auth = true
 -- certificates. You can list domains here that will not be required to
 -- authenticate using certificates. They will be authenticated using DNS.
 
-s2s_insecure_domains = { "gmail.com" }
+s2s_insecure_domains = { "gmail.com", "jabber.ccc.de" }
 
 -- Even if you leave s2s_secure_auth disabled, you can still require valid
 -- certificates for some domains by specifying a list here.
