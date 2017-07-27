@@ -32,7 +32,7 @@ RUN apt-get -qq update && \
                                                libssl-dev \
                                                mercurial \
                                                bsdmainutils \
-                                               prosody && \
+                                               prosody-0.10 && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 RUN hg clone https://hg.prosody.im/prosody-modules/ prosody-modules
