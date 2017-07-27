@@ -59,4 +59,4 @@ ADD bin/run.sh /app/bin/run.sh
 RUN chmod 0755 /app/bin/run.sh
 
 ENTRYPOINT ["/app/bin/run.sh"]
-CMD ["su", "-", "prosody", "-c", "/usr/bin/prosody"]
+CMD ["prosodyctl", "start"]
